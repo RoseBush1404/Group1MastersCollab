@@ -18,7 +18,11 @@ public:
 
 	USpinableTileSpawnPoint();
 
+	UFUNCTION(BlueprintCallable, Category = Getters)
 	AActor* GetSpanwedActor() const;
+
+	UFUNCTION(BlueprintCallable, Category = Getters)
+		bool GetIsWinCondition() { return IsWinCondition; };
 
 protected:
 
@@ -30,6 +34,9 @@ private:
 
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 		TSubclassOf<AActor> SpawnClass;
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		bool IsWinCondition;
 
 	UPROPERTY()
 		AActor* SpawnedActor = nullptr;
